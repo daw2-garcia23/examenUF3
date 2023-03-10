@@ -1,14 +1,13 @@
 import path from 'path'
-import { build } from 'vite'
 
 export default {
   root: path.resolve(__dirname, 'src'), // Carpeta donde alojamos el archivo main.js
-  base: './' ,
+  base: './',
   resolve: {
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
     }
-},
+  },
   build: {
     rollupOptions: {
         /*
