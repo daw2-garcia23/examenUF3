@@ -5102,7 +5102,8 @@ const cervezas = [
     tipo: "Lager",
     origen: "Madrid",
     descripcion: "Cerveza rubia, suave y refrescante con un sabor ligeramente amargo.",
-    imagen: "https://www.mahou.es/wp-content/themes/mahou_v2/template-contents/mahou-familia/dist/images/Botella_Mahou_5_Estrellas.png"
+    imagen: "https://www.mahou.es/wp-content/themes/mahou_v2/template-contents/mahou-familia/dist/images/Botella_Mahou_5_Estrellas.png",
+    precio: 2
   },
   {
     id: 2,
@@ -5110,7 +5111,8 @@ const cervezas = [
     tipo: "Lager",
     origen: "Galicia",
     descripcion: "Cerveza suave y equilibrada con un sabor ligeramente amargo y aroma a malta.",
-    imagen: "https://cdn.shopify.com/s/files/1/0271/8158/0388/products/estrella-galicia-escerveza-3.jpg?v=1648893181"
+    imagen: "https://cdn.shopify.com/s/files/1/0271/8158/0388/products/estrella-galicia-escerveza-3.jpg?v=1648893181",
+    precio: 2
   },
   {
     id: 3,
@@ -5118,7 +5120,8 @@ const cervezas = [
     tipo: "Lager",
     origen: "Granada",
     descripcion: "Cerveza rubia con un sabor ligeramente dulce y toques de caramelo.",
-    imagen: "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202204/04/00118602800916____3__600x600.jpg"
+    imagen: "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202204/04/00118602800916____3__600x600.jpg",
+    precio: 2
   },
   {
     id: 4,
@@ -5126,7 +5129,8 @@ const cervezas = [
     tipo: "Lager",
     origen: "Barcelona",
     descripcion: "Cerveza rubia, suave y refrescante con un sabor ligeramente amargo.",
-    imagen: "https://www.sanmiguel.com/es/wp-content/uploads/sites/2/2021/01/san-miguel-gluten-free-4.png"
+    imagen: "https://www.sanmiguel.com/es/wp-content/uploads/sites/2/2021/01/san-miguel-gluten-free-4.png",
+    precio: 2
   },
   {
     id: 5,
@@ -5134,72 +5138,10 @@ const cervezas = [
     tipo: "Lager",
     origen: "Barcelona",
     descripcion: "Cerveza rubia, suave y refrescante con un sabor ligeramente amargo.",
-    imagen: "https://static.damm.com/sites/default/files/config-page/estrella_header_logo/estrella-damm_0.png"
+    imagen: "https://static.damm.com/sites/default/files/config-page/estrella_header_logo/estrella-damm_0.png",
+    precio: 2
   }
 ];
-const pedidos = {
-  template: `
-  <div class="container">
-  <div class="container-fluid">
-    <form class="mx-5 shadow mt-5" style="width: 80rem;">
-    <div class="d-flex container">
-        <div class="container-fluid m-5">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Nombre del grupo</label>
-            <input type="text" class="form-control" id="equipo" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Mesa</label>
-            <input type="number" class="form-control" id="mesa">
-        </div>
-        <div class="mb-3">
-            <select class="form-select" id="cervezas" aria-label="Default select example">
-                <option selected>--- Selecciona tu birra ---</option>
-                <option value="1">Mahou Cinco Estrellas</option>
-                <option value="2">Estrella Galicia</option>
-                <option value="3">Alhambra Reserva 1925</option>
-                <option value="3">San Miguel Especial</option>
-                <option value="3">Damm Estrella</option>
-            </select>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">¿Cuántas traigo?</label>
-            <input type="number" class="form-control" id="mesa">
-        </div>
-        <div class="d-grid gap-2">
-            <button class="btn btn-success" type="button">Añadir pedido</button>
-        </div>
-        </div>
-        <div class="card m-5" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Nombre de la cerveza</h5>
-                <p class="card-text">Cerveza.....</p>
-            </div>
-            <img src="..." class="card-img-top" alt="...">
-        </div>
-    </div>
-</form>
-</div>
-</div>
-`,
-  script: () => {
-    const seleccion = document.querySelector("#cervezas");
-    seleccion.addEventListener("change", (event) => {
-      const posi = cervezas.findIndex((cerveza) => cerveza.id = event.target.value);
-      const html = `
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-               <h3 class="card-text">${cervezas[posi].nombre}</h3> 
-                <p class="card-text">${cervezas[posi].descripcion}</p>
-            </div>
-            <img src="${cervezas[posi].imagen}" class="card-img-bottom">
-        </div>
-        `;
-      const descripcion = document.querySelector("#descripcionCervezas");
-      descripcion.innerHTML = html;
-    });
-  }
-};
 const tabla = {
   template: `
     <table class="table container mt-5 shadow" style="margin-left: 18em;">
@@ -5234,7 +5176,97 @@ const tabla = {
     </tr>
   </tbody>
 </table>
-`
+`,
+  script: () => {
+    const botonEliminar = document.querySelectorAll(".btn-danger");
+    console.log("Has entrado en eliminar");
+    botonEliminar.forEach((boton) => {
+      boton.addEventListener("click", () => {
+        const fila = boton.parentElement;
+        fila.remove();
+      });
+      console.log("Eliminado correctamente");
+    });
+    const botonesEditar = document.querySelectorAll(".btn-warning");
+    console.log("Has entrado en editar");
+    botonesEditar.forEach((boton) => {
+      boton.addEventListener("click", () => {
+        const fila = boton.parentElement;
+        const cerveza = fila.children[0].textContent;
+        const cantidad = fila.children[1].textContent;
+        const nuevoModelo = prompt(`Editar modelo de ${cerveza}`, cerveza);
+        const nuevaCantidad = prompt(`Editar cantidad de ${cerveza}`, cantidad);
+        if (nuevaCantidad != null || nuevoModelo != null) {
+          fila.children[0].textContent = nuevoModelo;
+          fila.children[1].textContent = nuevaCantidad;
+        }
+      });
+      console.log("Editado correctamente");
+    });
+  }
+};
+const pedidos = {
+  template: `
+  <div class="container">
+  <div class="container-fluid">
+    <form class="mx-5 shadow mt-5" style="width: 80rem;">
+    <div class="d-flex container">
+        <div class="container-fluid m-5">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre del grupo</label>
+            <input type="text" class="form-control" id="equipo" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Mesa</label>
+            <input type="number" class="form-control" id="mesa">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" id="cervezas" aria-label="Default select example">
+                <option selected>--- Selecciona tu birra ---</option>
+                <option value="1">Mahou Cinco Estrellas</option>
+                <option value="2">Estrella Galicia</option>
+                <option value="3">Alhambra Reserva 1925</option>
+                <option value="3">San Miguel Especial</option>
+                <option value="3">Damm Estrella</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">¿Cuántas traigo?</label>
+            <input type="number" class="form-control" id="mesa">
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-success" type="button" id="add">Añadir pedido</button>
+        </div>
+        </div>
+        <div class="card m-5" style="width: 18rem;">
+            <div class="card-body" id="cardi">
+                <h5 class="card-title">Nombre de la cerveza</h5>
+                <p class="card-text">Cerveza.....</p>
+            </div>
+            <img src="..." class="card-img-top" alt="...">
+        </div>
+    </div>
+</form>
+</div>
+</div>
+`,
+  script: () => {
+    const seleccion = document.querySelector("#cervezas");
+    seleccion.addEventListener("change", (event) => {
+      const posi = cervezas.findIndex((cerveza) => cerveza.id = event.target.value);
+      const html = `
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+               <h3 class="card-text">${cervezas[posi].nombre}</h3> 
+                <p class="card-text">${cervezas[posi].descripcion}</p>
+            </div>
+            <img src="${cervezas[posi].imagen}" class="card-img-bottom">
+        </div>
+        `;
+      const descripcion = document.querySelector("#cardi");
+      descripcion.innerHTML = html;
+    });
+  }
 };
 document.querySelector("header").innerHTML = header.template;
 document.querySelector("main").innerHTML = home.template;
