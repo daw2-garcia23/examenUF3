@@ -35,7 +35,7 @@ export const pedidos = {
         </div>
         </div>
         <div class="card m-5" style="width: 18rem;">
-            <div class="card-body">
+            <div class="card-body" id="cardi">
                 <h5 class="card-title">Nombre de la cerveza</h5>
                 <p class="card-text">Cerveza.....</p>
             </div>
@@ -59,7 +59,7 @@ script: ()=>{
             <img src="${cervezas[posi].imagen}" class="card-img-bottom">
         </div>
         `
-        const descripcion = document.querySelector("#cervezas")
+        const descripcion = document.querySelector("#cardi")
         descripcion.innerHTML = html
     });
     
