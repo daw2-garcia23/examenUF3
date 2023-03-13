@@ -1,4 +1,5 @@
 import { cervezas } from "./bd";
+import { tabla } from "./tablaPedidos";
 
 export const pedidos = {
   template: `
@@ -30,7 +31,7 @@ export const pedidos = {
             <input type="number" class="form-control" id="mesa">
         </div>
         <div class="d-grid gap-2">
-            <button class="btn btn-success" type="button">Añadir pedido</button>
+            <button class="btn btn-success" type="button" id="add">Añadir pedido</button>
         </div>
         </div>
         <div class="card m-5" style="width: 18rem;">
@@ -58,9 +59,9 @@ script: ()=>{
             <img src="${cervezas[posi].imagen}" class="card-img-bottom">
         </div>
         `
-        const descripcion = document.querySelector("#descripcionCervezas")
+        const descripcion = document.querySelector("#cervezas")
         descripcion.innerHTML = html
     });
-
+    
  }
 };

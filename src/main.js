@@ -11,3 +11,4 @@ tabla
     document.querySelector('main').innerHTML = home.template
     document.querySelector('pedidos').innerHTML = pedidos.template
     document.querySelector('tabla').innerHTML = tabla.template
+  

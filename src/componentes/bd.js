@@ -5,7 +5,8 @@ export const cervezas = [
       tipo: "Lager",
       origen: "Madrid",
       descripcion: "Cerveza rubia, suave y refrescante con un sabor ligeramente amargo.",
-      imagen: "https://www.mahou.es/wp-content/themes/mahou_v2/template-contents/mahou-familia/dist/images/Botella_Mahou_5_Estrellas.png"
+      imagen: "https://www.mahou.es/wp-content/themes/mahou_v2/template-contents/mahou-familia/dist/images/Botella_Mahou_5_Estrellas.png",
+      precio: 2
     },
     {
       id: 2,
@@ -13,7 +14,8 @@ export const cervezas = [
       tipo: "Lager",
       origen: "Galicia",
       descripcion: "Cerveza suave y equilibrada con un sabor ligeramente amargo y aroma a malta.",
-      imagen: "https://cdn.shopify.com/s/files/1/0271/8158/0388/products/estrella-galicia-escerveza-3.jpg?v=1648893181"
+      imagen: "https://cdn.shopify.com/s/files/1/0271/8158/0388/products/estrella-galicia-escerveza-3.jpg?v=1648893181",
+      precio: 2
     },
     {
       id: 3,
@@ -21,7 +23,8 @@ export const cervezas = [
       tipo: "Lager",
       origen: "Granada",
       descripcion: "Cerveza rubia con un sabor ligeramente dulce y toques de caramelo.",
-      imagen: "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202204/04/00118602800916____3__600x600.jpg"
+      imagen: "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/202204/04/00118602800916____3__600x600.jpg",
+      precio: 2
     },
     {
       id: 4,
@@ -29,7 +32,8 @@ export const cervezas = [
       tipo: "Lager",
       origen: "Barcelona",
       descripcion: "Cerveza rubia, suave y refrescante con un sabor ligeramente amargo.",
-      imagen: "https://www.sanmiguel.com/es/wp-content/uploads/sites/2/2021/01/san-miguel-gluten-free-4.png"
+      imagen: "https://www.sanmiguel.com/es/wp-content/uploads/sites/2/2021/01/san-miguel-gluten-free-4.png",
+      precio: 2
     },
     {
       id: 5,
@@ -37,6 +41,7 @@ export const cervezas = [
       tipo: "Lager",
       origen: "Barcelona",
       descripcion: "Cerveza rubia, suave y refrescante con un sabor ligeramente amargo.",
-      imagen: "https://static.damm.com/sites/default/files/config-page/estrella_header_logo/estrella-damm_0.png"
+      imagen: "https://static.damm.com/sites/default/files/config-page/estrella_header_logo/estrella-damm_0.png",
+      precio: 2
     }
   ];
